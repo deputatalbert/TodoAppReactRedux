@@ -6,7 +6,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import TodoInput from '../todoinput/TodoInput';
 import TodoList from '../todolist/TodoList';
 
-import { allTodo, completedTodo, searchTodo } from '../../redux/actions/actions';
+import { allTodo, completedTodo, liveSearchTodo } from '../../redux/actions/actions';
 
 const Search = () => {
   const dispatch = useDispatch();
@@ -29,7 +29,7 @@ const Search = () => {
           placeholder="Поиск записей"
           aria-label="Recipient's username with two button addons"
           aria-describedby="button-addon4"
-          onChange={(e) => dispatch(searchTodo(searchword(e)))}
+          onChange={(e) => dispatch(liveSearchTodo(searchword(e)))}
           value={search}
         />
 
@@ -44,7 +44,7 @@ const Search = () => {
 
 const Header = () => {
   const posts = useSelector((state) => state.tasks.tasks);
-  // Выполненные посты, фильтруем по свойству done
+  // Выполненные посты, фильтруем по свойству done и находим их количество
   const doneTodo = posts.filter((todo) => todo.done).length;
 
   return (

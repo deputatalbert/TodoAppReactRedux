@@ -23,7 +23,12 @@ function TodoInput() {
 
   const pressKey = (e) => {
     if (e.key === 'Enter') {
-      console.log('ENTER KEY');
+      dispatch(addTodo({
+        id: maxid(),
+        name,
+        done: false,
+      }));
+      setName('');
     }
   };
 

@@ -7,18 +7,16 @@ import TodoListItem from '../todolistitem/TodoListItem';
 function TodoList() {
   const tasks = useSelector((state) => state.tasks.tasks);
   const flag = useSelector((state) => state.tasks.flag);
-  const searches = useSelector((state) => state.tasks.search).toLowerCase();
+  const searcheInput = useSelector((state) => state.tasks.search).toLowerCase();
   let data = tasks;
 
   if (flag) {
     data = tasks.filter((data) => data.done);
   }
 
-  if (searches) {
-    data = data.filter((task) => task.name.toLowerCase().indexOf(searches) > -1);
+  if (searcheInput) {
+    data = data.filter((task) => task.name.toLowerCase().indexOf(searcheInput) > -1);
   }
-
-  console.log('Тип', searches);
 
   return (
     <div className="my-3">

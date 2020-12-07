@@ -16,7 +16,7 @@ export const delTodo = (todoId) => {
 
 export const doneTodo = (todoId) => {
   return {
-    type: 'DONE',
+    type: 'DONE_TODO',
     payload: todoId
   };
 };
@@ -35,7 +35,7 @@ export const completedTodo = (todoId) => {
   };
 };
 
-export const searchTodo = (todo) => {
+export const liveSearchTodo = (todo) => {
   return {
     type: 'LIVE_SEARCH',
     payload: todo

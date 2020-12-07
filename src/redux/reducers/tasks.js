@@ -21,7 +21,7 @@ export const tasks = (state = todos, action) => {
         tasks: newTasks,
       };
 
-    case 'DONE':
+    case 'DONE_TODO':
       newTasks = state.tasks.map((task) => {
         if (task.id === action.payload) {
           return {
