@@ -1,0 +1,32 @@
+.col {
+    text-align: left;
+    transition: 0.5s;
+}
+
+.col.done {
+    color: green;
+    transition: 0.5s;
+    text-decoration: line-through solid green ;
+}
+
+
+.alldone {
+    width: 30px;
+    height: 30px;
+    opacity: 0;
+    transition: 1s;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+} 
+
+.alldone.ok {
+    opacity: 1;
+    transition: 0.5s;
+    
+}
+
+
+.btn-success, .btn-danger {
+    width: 80px;
+}
